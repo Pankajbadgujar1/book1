@@ -21,8 +21,12 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name="index" ),
-    path('product/',views.product, name="pr"),
-    path('navbar/',views.navbar,name="nav"),
-    path('youtube/',views.youtube, name='youtube')
+    path('analyzed/', views.analyzed, name="analyzed")
+    # path('product/',views.product, name="pr"),
+    # path('navbar/',views.navbar,name="nav"),
+    # path('youtube/',views.youtube, name='youtube'),
 
-    ]
+    # path('removepunc/', views.removepunc, name= 'removepunc'),
+    # path('capitalize/', views.capitalize, name= 'capitalize'),
+
+    ] 
