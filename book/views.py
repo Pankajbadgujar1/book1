@@ -13,29 +13,32 @@ def analyzed(request):
     if removepun == "on":
         print(removepun)
         
-        not_punc = ""
+        analyze = ""
         punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         
         for char in djtext:
             if char not in punctuations:
-                not_punc = not_punc + char
-        
-        params = {'purpose':'Removed Punctuations', 'analyzed_text':not_punc}
-        print(not_punc)
+                analyze = analyze + char
+        djtext = analyze
+        params = {'purpose':'Removed Punctuations', 'analyzed_text':analyze}
+        print(analyze)
         #return HttpResponse("This is remove punchuation page......")
-        return render(request, 'analyzed.html', params)
+        #return render(request, 'analyzed.html', params)
     
-    elif capitalize =="on":
-        capital = ""
+    if capitalize =="on":
+        analyze = ""
         for char in djtext:
-            capital = capital + char.upper()
+            analyze = analyze + char.upper()
 
-        params = {'purpose':'Your Uppercase paragraph :', 'analyzed_text':capital}
-        return render(request, 'analyzed.html', params)
+        params = {'purpose':'Your Uppercase paragraph :', 'analyzed_text':analyze}
+       # return render(request, 'analyzed.html', params)
      
-    else:
+
+    if removepun != "on" and capitalize != "on":
         return HttpResponse("Please Select The action......")
-    
+    #else:
+     #   return HttpResponse("Please Select The action......")
+    return render(request, 'analyzed.html', params)
 
 # def product(request):
 #     return HttpResponse('<h1>This is product site page</h1>')
