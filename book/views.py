@@ -5,11 +5,11 @@ def index(request):
     return render(request,'index.html')
 
 def analyzed(request):
-    djtext = request.GET.get('text','default')
-    capitalize = request.GET.get('capitalize','Off')
+    djtext = request.POST.get('text','default')
+    capitalize = request.POST.get('capitalize','Off')
     print(djtext)    
 
-    removepun = request.GET.get('removepunc', 'Off')
+    removepun = request.POST.get('removepunc', 'Off')
     if removepun == "on":
         print(removepun)
         
@@ -50,7 +50,7 @@ def analyzed(request):
 #     return render(request, 'index.html')
 
 def removepunc(request):
-    djtext = request.GET.get('text','default')
+    djtext = request.POST.get('text','default')
     print(djtext)
 
     

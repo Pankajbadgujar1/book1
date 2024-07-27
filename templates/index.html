@@ -48,7 +48,7 @@
         Manupulate your text here.</h1>
         <h3> Enter your text below : </h3>
     
-    <form action = "/analyzed" method='get'>
+    <form action = "/analyzed/" method='post'> {% csrf_token %}
         <textarea name="text" style="width: 970px; height: 119px;"></textarea><br>
 
         <div class="form-check form-switch">
@@ -60,7 +60,7 @@
             <label class="form-check-label" for="flexSwitchCheckChecked">capitalize paragraph</label><br>
      <!--    <input type="checkbox" name= 'removepunc' >Remove punchuation <br>      
         <input type="checkbox" name= 'capitalize' >capitalize paragraph <br>        --> 
-        <button type="submit" class="btn btn-primary" >analyze Text</button>
+        <button type="submit" class="btn btn-dark mt-3" >analyze Text</button>
        
     </form>
     
